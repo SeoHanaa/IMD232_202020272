@@ -45,7 +45,7 @@ function draw() {
   ellipse(280, 180, 50, 50);
   ellipse(280, 180, 35, 35);
   ellipseMode(CENTER);
-  fill('#F9F291');
+  fill('#FFFCBD');
   ellipse(280, 180, 50, 50);
   // 곰팡이
   fill('#D4CE75');
@@ -146,4 +146,28 @@ function draw() {
   // 꽃 중앙
   fill(255, 255, 0);
   ellipse(200, 245, 10, 10);
+
+  // 파란빛
+  fill(98, 113, 172, 50);
+  rect(200, 200, 1000, 1000);
+
+  // 조명
+  // 전구
+  // 빛
+  translate(150, 150);
+  rotate(radians(49));
+  fill(255, 255, 204, 50);
+  rect(290, 170, 800, 500);
+  resetMatrix();
+
+  stroke('#50776E');
+  strokeWeight(14);
+  line(133, 50, 133, 0);
+  // 조립
+  noStroke();
+  fill('#E1D39D');
+  ellipse(133, 50, 70, 70);
+
+  fill('#50776E');
+  arc(133, 50, 80, 80, PI, 0, CHORD);
 }
