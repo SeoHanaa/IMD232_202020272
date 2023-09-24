@@ -1,6 +1,9 @@
+let canvasWidth = 500; // 초기 가로 크기
+let canvasHeight = 500; // 초기 세로 크기
+
 function setup() {
   let canvas;
-  canvas = createCanvas(500, 500);
+  canvas = createCanvas(canvasWidth, canvasHeight);
   let canvasParent;
   canvasParent = select('#p5-canvas');
   canvas.parent(canvasParent);

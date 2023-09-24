@@ -5,6 +5,7 @@ let velocityY = 5;
 
 function setup() {
   setCanvasContainer('canvas', 3, 2, true);
+  // 어디다 넣을 것인가- 아이디를 첨부
   background('white');
   x = width / 2.0;
   y = height / 2.0;
