@@ -23,6 +23,7 @@ function draw() {
   //   update();
   //   InfiniteEdges();
   display();
+  displayVectors();
 
   vel.add(acc);
   pos.add(vel);
@@ -53,4 +54,9 @@ function display() {
   noStroke();
   fill('black');
   ellipse(pos.x, pos.y, 60);
+}
+
+function displayVectors() {
+  stroke('red');
+  line(pos.x, pos.y, pos.x + vel.x * 10, pos.y + vel.y * 10);
 }

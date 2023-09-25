@@ -21,6 +21,7 @@ function draw() {
   update();
   InfiniteEdges();
   display();
+  displayVectors();
 
   let mouse = createVector(mouseX, mouseY);
 
@@ -42,18 +43,12 @@ function draw() {
   // cacc = p5.Vector.sub(a, b)
   // c = p5.Vector.sub(mouse, cv);
 
-  // 맞는거
-  translate(pos.x, pos.y);
-  stroke(0);
-  strokeWeight(2);
-  stroke('crimson');
-  line(0, 0, pos.x + accelerationX, pos.y + accelerationY);
-
+  // // 맞는거
   // translate(pos.x, pos.y);
   // stroke(0);
-  // strokeWeight(10);
+  // strokeWeight(2);
   // stroke('crimson');
-  // line(0, 0, pos.x + acc, pos.y + acc);
+  // line(0, 0, pos.x + accelerationX, pos.y + accelerationY);
 }
 
 function update() {
@@ -63,15 +58,6 @@ function update() {
   // acc.mult(0.1);
   // 매번 acc가 0.1을 가지고 랜덤 생성
   vel.limit(5);
-
-  // // 움직이는 방향 벡터
-  // let accelerationX = (pos.x + acc) / 10;
-  // let accelerationY = (pos.y + acc) / 10;
-  // 가속도 벡터 - 구현 못했습니다..
-  // let accelerationVelX = pos.x + vel;
-  // let accelerationVelY = pos.y + vel;
-  // console.log('accelerationX', accelerationX);
-  // console.log('accelerationY', accelerationY);
 }
 
 // 밖으로 나갈 경우 안쪽으로 들어오게
@@ -92,4 +78,12 @@ function display() {
   noStroke();
   fill('black');
   ellipse(pos.x, pos.y, 2 * rad);
+}
+
+function displayVectors() {
+  stroke('red');
+  line(pos.x, pos.y, pos.x + vel.x * 10, pos.y + vel.y * 10);
+
+  stroke('blue');
+  line(pos.x, pos.y, pos.x + acc.x * 100, pos.y + acc.y * 100);
 }
