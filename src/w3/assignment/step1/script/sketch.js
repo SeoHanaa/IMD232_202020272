@@ -9,7 +9,7 @@ function setup() {
   let canvasParent;
   canvasParent = select('#p5-canvas');
   canvas.parent(canvasParent);
-  background('white');
+  background('#F3EFFF');
 
   pos = createVector(random(width), random(height));
   vel = createVector(0, 0);
@@ -17,7 +17,7 @@ function setup() {
 }
 
 function draw() {
-  background('white');
+  background('#F3EFFF');
   update();
   InfiniteEdges();
   display();
@@ -35,15 +35,11 @@ function draw() {
   // accelerationVelY = createVector();
 
   // 가속도 설정
-  let cacc = p5.Vector.sub(mouse, pos);
-  cacc.setMag(0.1);
-  acc = cacc;
+  // let cacc = p5.Vector.sub(mouse, pos);
+  // cacc.setMag(0.1);
+  // acc = cacc;
 
-  // 가속도와 속도 시각화하기
-  // cacc = p5.Vector.sub(a, b)
-  // c = p5.Vector.sub(mouse, cv);
-
-  // // 맞는거
+  // // 시도,,
   // translate(pos.x, pos.y);
   // stroke(0);
   // strokeWeight(2);
@@ -76,7 +72,7 @@ function InfiniteEdges() {
 
 function display() {
   noStroke();
-  fill('black');
+  fill('#655995');
   ellipse(pos.x, pos.y, 2 * rad);
 }
 

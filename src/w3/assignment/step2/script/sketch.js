@@ -9,7 +9,7 @@ function setup() {
   let canvasParent;
   canvasParent = select('#p5-canvas');
   canvas.parent(canvasParent);
-  background('white');
+  background('#F3EFFF');
 
   mv = createVector();
 
@@ -19,7 +19,7 @@ function setup() {
 }
 
 function draw() {
-  background('white');
+  background('#F3EFFF');
   //   update();
   //   InfiniteEdges();
   display();
@@ -52,7 +52,7 @@ function draw() {
 
 function display() {
   noStroke();
-  fill('black');
+  fill('#655995');
   ellipse(pos.x, pos.y, 60);
 }
 
