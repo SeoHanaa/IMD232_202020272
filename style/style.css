@@ -222,8 +222,7 @@ canvas {
   display: grid;
   grid-template-columns: repeat(1, max-content) minmax(15.5ch, 1fr);
   row-gap: 0.5em;
-  -moz-column-gap: 1.5em;
-       column-gap: 1.5em;
+  column-gap: 1.5em;
 }
 .table--col-3,
 .grid--col-3 {
@@ -269,7 +268,6 @@ canvas {
 
 .table {
   overflow-x: auto;
-  width: -moz-fit-content;
   width: fit-content;
   max-width: 100%;
   padding: 2rem;

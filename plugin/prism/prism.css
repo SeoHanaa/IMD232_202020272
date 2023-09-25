@@ -16,6 +16,8 @@ pre[class*=language-] {
   -o-tab-size: 4;
   tab-size: 4;
   -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
   hyphens: none;
 }
 
@@ -207,6 +209,7 @@ pre[class*=language-].line-numbers > code {
   border-right: 1px solid oklch(60% 0 0/1);
   -webkit-user-select: none;
   -moz-user-select: none;
+  -ms-user-select: none;
   user-select: none;
 }
 
