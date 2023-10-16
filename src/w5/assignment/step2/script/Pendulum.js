@@ -79,6 +79,7 @@ class Pendulum {
 }
 
 //교수님코드
+
 // class Pendulum {
 //   constructor(x, y, length, angle, rad) {
 //     this.angle = angle;
