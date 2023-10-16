@@ -1,114 +1,68 @@
-let moverA;
-// let moverB;
+let pend;
 let gravity;
-// let wind;
-let mVec;
-let pMVec;
-
-// let mover;
-// let gravity;
-// let mVec;
-// let pMVec;
 
 function setup() {
-  setCanvasContainer('canvas', 1, 1, true);
+  setCanvasContainer('canvas', 2, 1, true);
+
+  pend = new Pendulum(width / 2, 10, height / 2, (TAU / 360) * 30, 50);
+  gravity = createVector(0, 1);
+
   background(255);
-  moverA = new Mover(width / 2, height / 2, 100);
-  //moverA = new Mover(width / 3, height / 2, 10);
-  // moverB = new Mover((2 * width) / 3, height / 2, 1);
-  gravity = createVector(0, 0.5);
-  // wind = createVector(0.2, 0);
-  mVec = createVector();
-  pMVec = createVector();
 }
-
-// function setup() {
-//   setCanvasContainer('canvas', 1, 1, true);
-
-//   mover = new Mover(width / 2, height / 2, 100);
-//   gravity = createVector(0, 0.5);
-
-//   mVec = createVector();
-//   pMVec = createVector();
-
-//   background(255);
-// }
 
 function draw() {
-  background(255);
-  //const force = p5.Vector.mult(gravity, mover.mass);
+  pend.applyForce(gravity);
+  pend.update();
 
-  let gravityA = createVector(gravity.x, gravity.y);
-  gravityA.mult(moverA.mass);
-  moverA.applyForce(gravityA);
-  if (mouseIsPressed && isMouseInsideCanvas()) {
-    moverA.applyForce(wind);
-  }
-  if (moverA.contactEdge()) {
-    let c = 0.01;
-    let friction = moverA.vel.copy();
-    friction.mult(-1);
-    friction.mult(c);
-    moverA.applyForce(friction);
-  }
-  moverA.update();
-  moverA.checkEdges();
-  moverA.display();
-  moverA.displayVectors();
+  background(255);
+  pend.display();
 }
 
-// function draw() {
-//   const force = p5.Vector.mult(gravity, mover.mass);
+function mouseMoved() {
+  pend.mouseMoved(mouseX, mouseY);
+}
+function mousePressed() {
+  pend.mousePressed(mouseX, mouseY);
+}
+function mouseDragged() {
+  pend.mouseDragged(mouseX, mouseY);
+}
+function mouseReleased() {
+  pend.mouseReleased();
+}
 
-//   background(255);
-// }
-
-// function mouseMoved() {}
-
-// function mousePressed() {}
-
-// function mouseDragged() {}
-
-// function mouseReleased() {
-//   pMVec.set(pmouseX, pmouseY);
-//   mVec.set(mouseX, mouseY);
-
-//   mover.applyForce(throwingForce);
-// }
-
-// 교수님 미완성 시작점 코드
-// let mover;
+//교수님 코드
+// let pendulumA;
 // let gravity;
-// let mVec;
-// let pMVec;
 
 // function setup() {
-//   setCanvasContainer('canvas', 1, 1, true);
+//   setCanvasContainer('canvas', 2, 1, true);
 
-//   mover = new Mover(width / 2, height / 2, 100);
+//   pendulumA = new Pendulum(width / 2, 10, height / 3, (TAU / 360) * 45, 25);
 //   gravity = createVector(0, 0.5);
-
-//   mVec = createVector();
-//   pMVec = createVector();
 
 //   background(255);
 // }
 
 // function draw() {
-//   const force = p5.Vector.mult(gravity, mover.mass);
-
+//   pendulumA.applyGravity(gravity);
+//   pendulumA.update();
 //   background(255);
+//   pendulumA.display();
 // }
 
-// function mouseMoved() {}
+// function mouseMoved() {
+//   pendulumA.mouseMoved(mouseX, mouseY);
+// }
 
-// function mousePressed() {}
+// function mousePressed() {
+//   pendulumA.mousePressed(mouseX, mouseY);
+// }
 
-// function mouseDragged() {}
+// function mouseDragged() {
+//   pendulumA.mouseDragged(mouseX, mouseY);
+// }
 
 // function mouseReleased() {
-//   pMVec.set(pmouseX, pmouseY);
-//   mVec.set(mouseX, mouseY);
-
-//   mover.applyForce(throwingForce);
+//   pendulumA.mouseReleased();
 // }
