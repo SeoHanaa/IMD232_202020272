@@ -1,8 +1,6 @@
 let emitter;
 let particle;
 let g;
-// let x = mouseX;
-// let y = mouseY;
 
 function setup() {
   setCanvasContainer('canvas', 2, 1, true);
@@ -37,6 +35,7 @@ function draw() {
   emitter.display();
   console.log(emitter.balls.length);
 }
+
 function mousePressed() {
   emitter.push(new Emitter(mouseX, mouseY));
 }
